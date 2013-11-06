@@ -127,6 +127,11 @@
 		
 		// template rendering
 		private function render($view,$data=NULL){
+		    $this->parser->parse('v_templates/header.tpl');
+		    $this->load->view('v_templates/top_bar');
+		    $this->load->view('v_templates/main_template/template_1_open');
+		    $this->load->view('v_templates/main_template/template_1_nav');
+		    $this->load->view('v_templates/main_template/template_1_main_open');
 			if($this->errors != NULL){
 				$data['errors'] = $this->errors;
 				$this->load->view('v_templates/errors',$data);
@@ -142,12 +147,18 @@
 			$this->errors = NULL;
 			$this->warnings = NULL;
 			$this->notes = NULL;
+			
+			$this->load->view('v_templates/main_template/template_1_main_close');
+			
+			$this->load->view('v_templates/main_template/template_1_close');
+			$this->load->view('v_templates/bottom_bar');
+			$this->load->view('v_templates/footer');
 		}
 		
 		// helpers
 		private function check_point(){
 			if(!$this->session->userdata('is_logged_in') == true){
-				$this->login();
+				redirect('user/login');
 			}
 		}
 	}

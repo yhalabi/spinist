@@ -1,0 +1,1 @@
+<div id="application" class="col-lg-10 col-lg-offset-2">

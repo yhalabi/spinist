@@ -48,8 +48,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'yousef';
-$db['default']['password'] = 'KOY92b11!';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'koy92b11';
 $db['default']['database'] = 'spinist-beta-1.3';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
